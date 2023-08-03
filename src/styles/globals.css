@@ -8,12 +8,13 @@
 
 body {
   font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
   max-width: 1440px;
   margin: 0 auto;
 }
 
 /* DISPLAY 42px bold */
-
+/* 
 h1 {
   font-size: 36px;
   font-weight: 700;
@@ -42,4 +43,4 @@ h5 {
 p {
   font-size: 18px;
   font-weight: 400;
-}
+} */

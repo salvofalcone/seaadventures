@@ -1,0 +1,51 @@
+.Card {
+  background-color: $color-white;
+  padding: $pad-sm;
+  width: 300px;
+  height: 300px;
+  border-radius: 12px;
+  @include flexbox(column, center, space-between);
+  line-height: 1.4rem;
+
+  &__Top {
+    align-self: flex-start;
+
+    &__Price {
+      font-size: 1.4rem;
+    }
+  }
+
+  &__Content {
+    width: 100%;
+    @include flexbox(column, center, center);
+    gap: 12px;
+    font-size: 0.8rem;
+
+    &__Travel {
+      width: 100%;
+      @include flexbox(column, center, space-between);
+      gap: 12px;
+
+      &__Info {
+        width: 100%;
+        @include flexbox(row, center, space-between);
+      }
+    }
+
+    &__Availability {
+      align-self: flex-start;
+    }
+  }
+
+  &__Button {
+    width: 100%;
+    background-color: $color-blue;
+    color: $color-white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 4px;
+    border: none;
+    padding: $pad-sm;
+    cursor: pointer;
+  }
+}

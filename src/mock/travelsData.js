@@ -1,4 +1,4 @@
-const travelsData = [
+export const travelsData = [
   {
     id: "61a52052759e7f71d786",
     code: "8142-90724",

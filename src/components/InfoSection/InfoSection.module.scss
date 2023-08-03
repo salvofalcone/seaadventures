@@ -1,0 +1,26 @@
+.InfoSection {
+  position: relative;
+
+  &__Image {
+    height: 600px;
+    background-image: url("/images/banner.jpeg");
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    //aggiungere hue rotate per raffreddare l'immagine
+    filter: brightness(0.5);
+  }
+
+  &__Description {
+    @include flexbox(row, center, center);
+    gap: 72px;
+    @include centerPosition;
+    color: $color-white;
+
+    div {
+      @include flexbox(column, center, center);
+      font-size: 2.2rem;
+      font-weight: 400;
+    }
+  }
+}
