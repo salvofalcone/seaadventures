@@ -2,11 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import Head from "next/head";
 
-// import { travelsData } from "@/mock/travelsData";
-
 import Header from "@/components/Header";
 import CardList from "@/components/CardList";
-import Card from "@/components/Card";
 
 import InfoSection from "@/components/InfoSection";
 
@@ -18,7 +15,7 @@ export default function Home() {
       .then((res) => res.json())
       .then((data) => setTravelsData(data));
   }, []);
-  
+
   const [travelsData, setTravelsData] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(8);
 
@@ -26,16 +23,13 @@ export default function Home() {
   const randomNum = Math.floor(Math.random() * (travelsData.length - 8));
   const travelsDataSection = travelsData.slice(0, currentIndex);
 
-
-  
   for (let i = randomNum; i < randomNum + 8; i++) {
     tempData.push(travelsData[i]);
   }
-  
+
   const onHandleClick = () => {
     setCurrentIndex(currentIndex + 8);
   };
-  
 
   return (
     <>
@@ -49,13 +43,10 @@ export default function Home() {
       <main className={styles.Main}>
         <Header />
 
-        <div>
+        <div className={styles.CardList__Main}>
           <div className={styles.CardList}>
             <div className={styles.CardList__Container}>
-              {/* {travelsDataSection.map((el) => (
-                <Card travelInfo={el} key={el.id} />
-              ))} */}
-              <CardList pippo={travelsDataSection} />
+              <CardList data={travelsDataSection} />
             </div>
           </div>
 
@@ -71,9 +62,7 @@ export default function Home() {
         {/* TODO: cambiano quando premo su "mostra altro" */}
         <div className={styles.CardList}>
           <div className={styles.CardList__Container}>
-            {tempData.map((el, i) => (
-              <Card travelInfo={el} key={i} />
-            ))}
+            <CardList data={tempData} />
           </div>
         </div>
       </main>
