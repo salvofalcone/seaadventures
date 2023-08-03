@@ -1,0 +1,47 @@
+// 0px -> 767px ======== smartphone ======== xs
+// 768px -> 1023px ===== tablet ============ sm
+// 1024px -> 1439px ==== laptop ============ md
+// 1440px -> 1919px ==== desktop =========== lg
+// 1920px ============== large screem ====== xl
+
+// $xs: 0px;
+// $sm: 768px;
+// $md: 1024px;
+// $lg: 1040px;
+// $xl: 1920px;
+
+$phone: 0px;
+$tablet: 768px;
+$laptop: 1024px;
+$desktop: 1440px;
+$large: 1920px;
+
+@mixin xs {
+  @media only screen and (min-width: $phone) and (max-width: #{$tablet - 1}) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media only screen and (min-width: $tablet) and (max-width: #{$laptop - 1}) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media only screen and (min-width: $laptop) and (max-width: #{$desktop - 1}) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media only screen and (min-width: $desktop) and (max-width: #{$large - 1}) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media only screen and (min-width: $large) {
+    @content;
+  }
+}

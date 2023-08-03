@@ -1,0 +1,23 @@
+.Header {
+  @include flexbox(column, center, center);
+}
+
+.Hero {
+  width: 100%;
+  position: relative;
+
+  &__Image {
+    height: 600px;
+    background-image: url("/images/hero.jpeg");
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    //aggiungere hue rotate per raffreddare l'immagine
+    filter: brightness(0.5);
+  }
+
+  &__Description {
+    @include centerPosition;
+    color: $color-white;
+  }
+}

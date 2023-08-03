@@ -1,0 +1,42 @@
+@mixin reset() {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/********************************** DIMENSION **********************************/
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin max-width($width) {
+  max-width: $width;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@mixin space($margin, $padding) {
+  margin: $margin;
+  padding: $padding;
+}
+
+/********************************** POSITION **********************************/
+@mixin centerPosition() {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin flexbox($dir, $align, $justify) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+/********************************** STYLE **********************************/
+@mixin gradient-background($start-color, $end-color, $direction) {
+  background: linear-gradient($direction, $start-color, $end-color);
+}
