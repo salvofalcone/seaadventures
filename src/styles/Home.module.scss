@@ -1,14 +1,27 @@
 .Main {
   color: $color-dark-blue;
+
+  &__Select {
+    margin: 48px;
+    padding: $pad-md;
+    width: 300px;
+    cursor: pointer;
+  }
 }
 
 .CardList__Main {
   @include flexbox(column, center, center);
-  margin: 24px 0;
+  margin-bottom: 24px;
 }
 
 .CardList {
   @include flexbox(column, center, center);
+
+  &__Title {
+    align-self: flex-start;
+    margin: 48px;
+    font-weight: 400;
+  }
 
   &__Container {
     display: flex;
@@ -29,4 +42,12 @@
   border: none;
   padding: $pad-sm;
   cursor: pointer;
+}
+
+.Port__Title {
+  background-color: $color-dark-blue;
+  color: $color-white;
+  padding: $pad-sm;
+  font-size: 1.6rem;
+  margin: 0 48px;
 }

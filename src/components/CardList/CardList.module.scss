@@ -1,13 +1,10 @@
 .CardList {
-  @include flexbox(column, center, center);
+  @include flexbox(column, flex-start, flex-start);
   margin: 24px 0;
 
   &__Container {
-    margin: 24px 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    margin: 24px 48px;
+    @include flexbox(row, center, flex-start);
     flex-wrap: wrap;
     gap: 24px;
   }
