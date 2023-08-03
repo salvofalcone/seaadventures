@@ -1,5 +1,31 @@
 .Main {
   // @include flexbox(row, center, center);
   color: $color-dark-blue;
-  
+}
+
+.CardList {
+  @include flexbox(column, center, center);
+  margin: 24px 0;
+
+  &__Container {
+    margin: 24px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+}
+
+.CardList__Button {
+  background-color: $color-blue;
+  width: 280px;
+  color: $color-white;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 4px;
+  border: none;
+  padding: $pad-sm;
+  cursor: pointer;
 }
