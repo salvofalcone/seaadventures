@@ -11,7 +11,8 @@
     align-self: flex-start;
 
     &__Price {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
+      font-weight: 600;
     }
   }
 
@@ -47,5 +48,11 @@
     border: none;
     padding: $pad-sm;
     cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .Card {
+    width: 340px;
   }
 }
