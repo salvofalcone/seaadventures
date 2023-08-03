@@ -11,7 +11,7 @@ const Card = ({ travelInfo }) => {
             {travelInfo?.budget?.value}
             {travelInfo?.budget?.currencyCode}
           </span>
-         {" "} {travelInfo?.budget.costType}
+         {" "} {travelInfo?.budget?.costType}
         </p>
         <h2 className={styles.Card__Top__Title}>{travelInfo?.title}</h2>
       </div>
