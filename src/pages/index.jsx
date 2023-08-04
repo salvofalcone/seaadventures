@@ -62,28 +62,30 @@ export default function Home() {
         <title>SeaAdventures</title>
         <meta name="description" content="SeaAdventures" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/images/logo.svg" />
       </Head>
 
       <main className={styles.Main}>
         <Header />
 
-        <div className={styles.Select}>
+        <div className={styles.Main__Select}>
           <select
             value={allPort}
             onChange={onHandleChange}
-            className={styles.Main__Select}>
+            className={styles.Main__Select__Item}>
             <option value="all">Mostra tutti</option>
             <option value="departurePort">Mostra per porto di partenza</option>
           </select>
 
           <select
             value={singlePort}
-            className={styles.Main__Select}
+            className={styles.Main__Select__Item}
             onChange={onHandleChange}>
             <option value="all"> Mostra tutti </option>
-            {portsList.map((port,i) => (
-              <option value={port} key={i}> {port} </option>
+            {portsList.map((port, i) => (
+              <option value={port} key={i}>
+                {port}
+              </option>
             ))}
           </select>
         </div>
@@ -124,6 +126,8 @@ export default function Home() {
             <CardList data={tempData} />
           </div>
         </div>
+
+        <div className={styles.Spacing}></div>
       </main>
     </>
   );

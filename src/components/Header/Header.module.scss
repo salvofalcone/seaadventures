@@ -1,5 +1,6 @@
 .Header {
   @include flexbox(column, center, center);
+  background-color: $color-white;
 }
 
 .Hero {
@@ -13,7 +14,7 @@
     background-repeat: no-repeat;
     background-position: center;
     //aggiungere hue rotate per raffreddare l'immagine
-    filter: brightness(0.5);
+    filter: brightness(0.5) /* hue-rotate(20deg) */;
   }
 
   &__Description {
@@ -24,6 +25,6 @@
 
 @media screen and (max-width: 767px) {
   .Hero__Description {
-   font-size: 1.8rem;
+    font-size: 1.8rem;
   }
 }

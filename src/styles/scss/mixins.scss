@@ -40,3 +40,8 @@
 @mixin gradient-background($start-color, $end-color, $direction) {
   background: linear-gradient($direction, $start-color, $end-color);
 }
+
+@mixin buttonHover() {
+  transform: scale(0.97);
+  transition: all 350ms ease;
+}

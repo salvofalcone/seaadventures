@@ -2,10 +2,17 @@
   color: $color-dark-blue;
 
   &__Select {
-    margin: 48px;
-    padding: $pad-md;
-    width: 300px;
-    cursor: pointer;
+    @include flexbox(row, center, space-between);
+    margin: 24px 48px 0 48px;
+
+    &__Item {
+      width: 300px;
+      padding: $pad-md;
+      cursor: pointer;
+      border: 1px solid rgb(184, 184, 184);
+      color: $color-dark-blue;
+      font-size: 1rem;
+    }
   }
 }
 
@@ -19,14 +26,13 @@
 
   &__Title {
     align-self: flex-start;
-    margin: 48px;
+    margin: 48px 0 0 48px;
     font-weight: 400;
+    font-size: 2rem;
   }
 
   &__Container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flexbox(row, center, center);
     flex-wrap: wrap;
     gap: 24px;
   }
@@ -42,6 +48,10 @@
   border: none;
   padding: $pad-sm;
   cursor: pointer;
+
+  &:hover {
+    @include buttonHover;
+  }
 }
 
 .Port__Title {
@@ -50,4 +60,17 @@
   padding: $pad-sm;
   font-size: 1.6rem;
   margin: 0 48px;
+}
+
+.Spacing {
+  background-color: $color-blue;
+  width: 100%;
+  height: 200px;
+}
+
+@media screen and (max-width: 767px) {
+  .Main__Select {
+    @include flexbox(column, center, center);
+    gap: 8px;
+  }
 }

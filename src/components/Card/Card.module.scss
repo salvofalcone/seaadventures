@@ -10,7 +10,7 @@
   &__Top {
     align-self: flex-start;
 
-    &__Title{
+    &__Title {
       font-size: 1.7rem;
     }
 
@@ -60,6 +60,10 @@
     border: none;
     padding: $pad-sm;
     cursor: pointer;
+
+    &:hover {
+      @include buttonHover;
+    }
   }
 }
 
