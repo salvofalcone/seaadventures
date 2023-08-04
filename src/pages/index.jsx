@@ -10,18 +10,19 @@ import InfoSection from "@/components/InfoSection";
 import styles from "@/styles/Home.module.scss";
 
 export default function Home() {
+  const [travelsData, setTravelsData] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(8);
+  const [allPort, setAllPort] = useState("all");
+  const [singlePort, setSinglePort] = useState();
+
   useEffect(() => {
     fetch("https://api.npoint.io/5f5e0098ca15d9d563bb")
       .then((res) => res.json())
       .then((data) => setTravelsData(data));
   }, []);
 
-  const [travelsData, setTravelsData] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(8);
-  const [allPort, setAllPort] = useState(true);
-
   const tempData = [];
-  const portsList = []; //mi sa che non la uso più
+  const portsList = [];
 
   const randomNum = Math.floor(Math.random() * (travelsData.length - 8));
   const travelsDataSection = travelsData.slice(0, currentIndex);
@@ -46,6 +47,13 @@ export default function Home() {
 
   const onHandleChange = (e) => {
     setAllPort(e.target.value);
+
+    if (e.target.value === "all") {
+      setSinglePort();
+    } else {
+      setAllPort("departurePort");
+      setSinglePort(e.target.value);
+    }
   };
 
   return (
@@ -60,13 +68,25 @@ export default function Home() {
       <main className={styles.Main}>
         <Header />
 
-        <select
-          value={allPort}
-          onChange={onHandleChange}
-          className={styles.Main__Select}>
-          <option value="all">Mostra tutti</option>
-          <option value="departurePort">Mostra per porto di partenza</option>
-        </select>
+        <div className={styles.Select}>
+          <select
+            value={allPort}
+            onChange={onHandleChange}
+            className={styles.Main__Select}>
+            <option value="all">Mostra tutti</option>
+            <option value="departurePort">Mostra per porto di partenza</option>
+          </select>
+
+          <select
+            value={singlePort}
+            className={styles.Main__Select}
+            onChange={onHandleChange}>
+            <option value="all"> Mostra tutti </option>
+            {portsList.map((port,i) => (
+              <option value={port} key={i}> {port} </option>
+            ))}
+          </select>
+        </div>
 
         {allPort === "all" ? (
           <div className={styles.CardList__Main}>
@@ -82,13 +102,17 @@ export default function Home() {
               Mostra altre
             </button>
           </div>
-        ) : (
+        ) : singlePort === "departurePort" ? (
           groupedTravelsData.map((trip) => (
             <>
               <h4 className={styles.Port__Title}>{trip.Port}</h4>
               <CardList data={trip.info} />
             </>
           ))
+        ) : (
+          <CardList
+            data={travelsData.filter((el) => el.departure.Port === singlePort)}
+          />
         )}
 
         <InfoSection />

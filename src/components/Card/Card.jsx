@@ -10,8 +10,8 @@ const Card = ({ travelInfo }) => {
           <span className={styles.Card__Top__Price}>
             {travelInfo?.budget?.value}
             {travelInfo?.budget?.currencyCode}
-          </span>
-         {" "} {travelInfo?.budget?.costType}
+          </span>{" "}
+          {travelInfo?.budget?.costType}
         </p>
         <h2 className={styles.Card__Top__Title}>{travelInfo?.title}</h2>
       </div>
