@@ -51,9 +51,11 @@ const Card = ({ travelInfo }) => {
                 <p>{depDate}</p>
                 <p className={styles.Card__Content__Light}>{depTime}</p>
               </div>
+
               <div>
                 <RightArrow />
               </div>
+
               <div>
                 <p>{arrDate}</p>
                 <p className={styles.Card__Content__Light}>{arrTime}</p>
@@ -65,6 +67,7 @@ const Card = ({ travelInfo }) => {
             <p>
               {travelInfo?.reservations} {travelInfo?.reservationsType}
             </p>
+
             <p>
               <span className={styles.Card__Content__Light}>Disponibilità</span>{" "}
               <span className={styles.Card__Content__Bold}>
@@ -109,7 +112,6 @@ const Card = ({ travelInfo }) => {
             <div>
               <p>{travelInfo?.departureDate}</p>
             </div>
-            {/* TODO: splittare data e ora e invertire i giorni */}
             <div>{"->"}</div>
             <div>
               <p>{travelInfo?.arrivalDate}</p>

@@ -119,7 +119,6 @@ export default function Home() {
 
         <InfoSection />
 
-        {/* TODO: cambiano quando premo su "mostra altro" */}
         <div className={styles.CardList}>
           <h2 className={styles.CardList__Title}>Avventure da scoprire</h2>
           <div className={styles.CardList__Container}>

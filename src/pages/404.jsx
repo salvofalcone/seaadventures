@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 
-// import styles from "@/styles/Error.module.scss";
+import styles from "@/styles/Error.module.scss";
 
 export default function Home() {
   return (
@@ -13,8 +13,10 @@ export default function Home() {
         <link rel="icon" href="/images/logo.svg" />
       </Head>
 
-      <main >
-        Sei perso in mare? Vai a <Link href={"/"}> casa! </Link>
+      <main className={styles.Main}>
+        <h1>404</h1>
+        <p>Get lost?</p>
+        <p>Swim  <Link href={"/"}> home! </Link></p>
       </main>
     </>
   );
